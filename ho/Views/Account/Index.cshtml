@@ -1,0 +1,38 @@
+﻿@model ho.ViewModel.AccountViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm("Login","Account", FormMethod.Post))
+    {
+        <table cellpadding="2" cellspacing="2">
+
+            @ViewBag.Error
+
+            @* username *@
+            <tr>
+                <td>@Html.LabelFor( acc => acc.Account.Username)</td>
+                <td>@Html.TextBoxFor( acc => acc.Account.Username)</td>
+            </tr>
+            @* password *@
+            <tr>
+                <td>@Html.LabelFor(acc => acc.Account.Password)</td>
+                <td>@Html.PasswordFor(acc => acc.Account.Password)</td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Login" /></td>
+            </tr>
+        </table>
+    }
+</body>
+</html>
