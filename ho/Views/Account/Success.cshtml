@@ -33,10 +33,10 @@
             </div>
             <!-- /toggle offscreen menu -->
             <!-- logo -->
-            <a href="@Url.Action("Index", "Gudang")" class="brand-logo">
+            <a href="@Url.Action("Index", "Account")" class="brand-logo">
                 <span>Reactor</span>
             </a>
-            <a href="#" class="small-menu-visible brand-logo">R</a>
+            <a href="@Url.Action("Index", "Account")" class="small-menu-visible brand-logo">R</a>
             <!-- /logo -->
         </div>
 
@@ -46,7 +46,7 @@
 
                 <!-- dashboard -->
                 <li>
-                    <a href="@Url.Action("Index", "Gudang")">
+                    <a href="@Url.Action("Index", "Account")">
                         <i class="icon-compass"></i>
                         <span>Dashboard</span>
                     </a>
@@ -61,9 +61,9 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="javascript:;">
+                            <a href="javascript:Url('Index', 'Demo');">
                                 <i class="toggle-accordion"></i>
-                                <span>Level</span>
+                                <span>Level 1</span>
                             </a>
                             <ul class="sub-menu">
                                 <li>
@@ -294,8 +294,8 @@
         <!-- main area -->
         <div class="main-content">
 
-       @*     @Html.Partial("View")*@
-
+            @Html.Partial("Index")
+            @*@Html.Partial("Work1", "Demo")*@
         </div>
         <!-- /main area -->
     </div>

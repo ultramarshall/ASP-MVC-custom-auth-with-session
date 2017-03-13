@@ -199,6 +199,7 @@
     <Compile Include="Controllers\AccessDeniedController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DemoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -5195,6 +5196,7 @@
     <Folder Include="Assets\vendor\bootstrap-sass\assets\images\" />
     <Folder Include="Assets\vendor\card\src\scss\bourbon\" />
     <Folder Include="Assets\vendor\prism\examples\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

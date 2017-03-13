@@ -10,16 +10,15 @@ namespace ho.Controllers
 {
     public class AccountController : Controller
     {
-        // GET: Account
         public ActionResult Index()
         {
-            if (SessionPersister.Username == String.Empty)
+            if (SessionPersister.Username != null)
             {
-                return View();
+                return View("Success");
             }
             else
             {
-                return View("Success");
+                return View();
             }
         }
 
@@ -36,13 +35,12 @@ namespace ho.Controllers
                 return View("Index");
             }
             SessionPersister.Username = avm.Account.Username;
-            Session["nama"] = "marshall";
             return View("Success");
         }
 
         public ActionResult Logout()
         {
-            SessionPersister.Username = String.Empty;
+            SessionPersister.Username = null;
             return RedirectToAction("Index");
         }
     }
