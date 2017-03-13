@@ -14,7 +14,7 @@ namespace ho.Controllers
         {
             if (SessionPersister.Username != null)
             {
-                return View("Success");
+                return RedirectToAction("Authenticated");
             }
             else
             {
@@ -33,9 +33,24 @@ namespace ho.Controllers
             {
                 ViewBag.Error = "Account Invalid";
                 return View("Index");
+            }else
+            {
+                SessionPersister.Username = avm.Account.Username;
+                return View("Success");
             }
-            SessionPersister.Username = avm.Account.Username;
-            return View("Success");
+            
+        }
+
+        public ActionResult Authenticated()
+        {
+            if (SessionPersister.Username != null)
+            {
+                return View("Success");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Account");
+            }
         }
 
         public ActionResult Logout()
