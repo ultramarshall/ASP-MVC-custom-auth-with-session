@@ -9,7 +9,6 @@ namespace ho
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Assets/styles").Include(
-                      "~/Assets/vendor/sweetalert/dist/sweetalert.css",
                       "~/Assets/styles/webfont.css",
                       "~/Assets/styles/climacons-font.css",
                       "~/Assets/vendor/bootstrap/dist/css/bootstrap.css",
@@ -28,9 +27,7 @@ namespace ho
                       "~/Assets/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.js",
                       "~/Assets/scripts/helpers/smartresize.js",
                       "~/Assets/scripts/constants.js",
-                      "~/Assets/scripts/main.js",
-                      "~/Assets/vendor/sweetalert/dist/sweetalert.min.js",
-                      "~/Assets/scripts/ui/alert.js"));
+                      "~/Assets/scripts/main.js"));
 
       
 
