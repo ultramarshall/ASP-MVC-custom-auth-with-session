@@ -13,7 +13,14 @@ namespace ho.Controllers
         // GET: Account
         public ActionResult Index()
         {
-            return View();
+            if (SessionPersister.Username == String.Empty)
+            {
+                return View();
+            }
+            else
+            {
+                return View("Success");
+            }
         }
 
         [HttpPost]
@@ -29,6 +36,7 @@ namespace ho.Controllers
                 return View("Index");
             }
             SessionPersister.Username = avm.Account.Username;
+            Session["nama"] = "marshall";
             return View("Success");
         }
 

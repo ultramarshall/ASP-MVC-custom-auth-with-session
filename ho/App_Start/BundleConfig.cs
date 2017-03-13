@@ -8,24 +8,32 @@ namespace ho
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+            bundles.Add(new StyleBundle("~/Assets/styles").Include(
+                      "~/Assets/vendor/sweetalert/dist/sweetalert.css",
+                      "~/Assets/styles/webfont.css",
+                      "~/Assets/styles/climacons-font.css",
+                      "~/Assets/vendor/bootstrap/dist/css/bootstrap.css",
+                      "~/Assets/styles/font-awesome.css",
+                      "~/Assets/styles/card.css",
+                      "~/Assets/styles/sli.css",
+                      "~/Assets/styles/animate.css",
+                      "~/Assets/styles/app.css",
+                      "~/Assets/styles/app.skins.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+            bundles.Add(new ScriptBundle("~/Assets/scripts").Include(
+                      "~/Assets/scripts/helpers/modernizr.js",
+                      "~/Assets/vendor/jquery/dist/jquery.js",
+                      "~/Assets/vendor/bootstrap/dist/js/bootstrap.js",
+                      "~/Assets/vendor/fastclick/lib/fastclick.js",
+                      "~/Assets/vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.js",
+                      "~/Assets/scripts/helpers/smartresize.js",
+                      "~/Assets/scripts/constants.js",
+                      "~/Assets/scripts/main.js",
+                      "~/Assets/vendor/sweetalert/dist/sweetalert.min.js",
+                      "~/Assets/scripts/ui/alert.js"));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+      
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
-
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
         }
     }
 }

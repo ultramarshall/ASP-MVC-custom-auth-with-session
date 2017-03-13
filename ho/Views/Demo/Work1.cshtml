@@ -1,17 +1,9 @@
 ﻿@using ho.Security
 @{
-    Layout = null;
+    ViewBag.Title = "Work 1";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Work1</title>
-</head>
-<body>
-    <div> 
         <h1>Work 1</h1>
 
         Welcome @SessionPersister.Username
@@ -20,6 +12,3 @@
         <br />
 
         <a href="@Url.Action("Logout", "Account")">Logout</a>
-    </div>
-</body>
-</html>

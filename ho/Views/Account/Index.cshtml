@@ -1,38 +1,45 @@
 ﻿@model ho.ViewModel.AccountViewModel
 @{
-    Layout = null;
+    ViewBag.Title = "Login";
 }
 
-<!DOCTYPE html>
+<div class="app signin usersession">
+    <div class="session-wrapper">
+        <div class="page-height-o row-equal align-middle">
+            <div class="column">
+                <div class="card bg-white no-border">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    @using (Html.BeginForm("Login","Account", FormMethod.Post))
-    {
-        <table cellpadding="2" cellspacing="2">
+                        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @role = "form", @class = "form-layout" }))
+                        {
+                            @*@Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)*@
+                            <div class="text-center m-b">
+                                <img src="~/Assets/icons/logo.png" alt="Alternate Text" style="width: 70px; height: 70px;" />
+                                <h4 class="text-uppercase">California</h4>
+                            </div>
+                            <div class="form-inputs">
+                                <span style="text-align:center;
+                                             border: 0;
+                                             color: red;
+                                             height: .8em;
+                                             width: 100%;
+                                             margin-bottom: 1em;"
+                                      class="form-control">@ViewBag.Error</span>
+                                @* username *@
+                                @Html.LabelFor(data => data.Account.Username, new { @class = "text-uppercase" })
+                                @Html.TextBoxFor(data => data.Account.Username, new { @class = "form-control input-lg", @placeholder = "Username" })
+                                @* password *@
+                                @Html.LabelFor(data => data.Account.Password, new { @class = "text-uppercase" })
+                                @Html.PasswordFor(data => data.Account.Password, new { @class = "form-control input-lg", @placeholder = "Passwords" })
+                            </div>
+                            <button class="btn btn-primary btn-block btn-lg m-b" type="submit">Login</button>
+                        }
 
-            @ViewBag.Error
+                    </div>
 
-            @* username *@
-            <tr>
-                <td>@Html.LabelFor( acc => acc.Account.Username)</td>
-                <td>@Html.TextBoxFor( acc => acc.Account.Username)</td>
-            </tr>
-            @* password *@
-            <tr>
-                <td>@Html.LabelFor(acc => acc.Account.Password)</td>
-                <td>@Html.PasswordFor(acc => acc.Account.Password)</td>
-            </tr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <tr>
-                <td>&nbsp;</td>
-                <td><input type="submit" value="Login" /></td>
-            </tr>
-        </table>
-    }
-</body>
-</html>
